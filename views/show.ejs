@@ -1,0 +1,36 @@
+<%- include('elements/head'); -%>
+
+<main class="container">
+
+  <div class="card my-4" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img class="img-fluid" src="<%= recipe.image %>" alt="<%= recipe.name %>">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title"><%= recipe.name %></h2>
+          <p><small class="text-muted">ID# <%= recipe.id %></small></p>
+          <p class="card-text"><%= recipe.description %></p>
+          
+          <hr/>
+          <a class="btn btn-danger" href="/recipe/<%= recipe.id %>/edit">
+            <i class="bi-pencil"></i>
+            Edit Recipe
+          </a>
+          <form class="d-inline-block" action="/recipe/<%= recipe.id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">
+              <i class="bi-trash"></i> Delete
+            </button>
+          </form>
+          <a class="btn btn-secondary" href="/">
+            <i class="bi bi-arrow-left"></i> BACK
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</main>
+
+<%- include('elements/foot'); -%>

@@ -1,0 +1,38 @@
+<%- include('elements/head'); -%>
+
+<main class="container">
+  <h1 class="py-4">New Recipe</h1>
+  <div class="card card-body">
+    <form action="/recipe/new" method="POST">
+
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Recipe name</label>
+        <div class="col-sm-10">
+          <input name="name" type="text" class="form-control" placeholder="Enter the recipe name" >
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Recipe photo:</label>
+        <div class="col-sm-10">
+          <input name="image" type="text" class="form-control" placeholder="Enter the photo url" >
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Recipe description</label>
+        <div class="col-sm-10">
+          <textarea name="description" cols="30" rows="5" class="form-control" placeholder="Enter the description" ></textarea>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-danger ">Submit</button>
+          <a class="btn btn-secondary" href="/">
+            <i class="bi bi-arrow-left"></i> BACK
+          </a>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<%- include('elements/foot'); -%>
