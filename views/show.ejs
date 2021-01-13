@@ -14,16 +14,16 @@
           <p class="card-text"><%= recipe.description %></p>
           
           <hr/>
-          <a class="btn btn-danger" href="/recipe/<%= recipe.id %>/edit">
+          <a class="btn btn-danger" href="/recipes/edit/<%= recipe.id %>">
             <i class="bi-pencil"></i>
             Edit Recipe
           </a>
-          <form class="d-inline-block" action="/recipe/<%= recipe.id %>?_method=DELETE" method="POST">
+          <form class="d-inline-block" action="/recipes/delete/<%= recipe.id %>?_method=DELETE" method="POST">
             <button class="btn btn-danger">
               <i class="bi-trash"></i> Delete
             </button>
           </form>
-          <a class="btn btn-secondary" href="/">
+          <a class="btn btn-secondary" href="/recipes">
             <i class="bi bi-arrow-left"></i> BACK
           </a>
         </div>

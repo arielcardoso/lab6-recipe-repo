@@ -4,25 +4,26 @@
   <h1 class="py-4">List all recipes</h1>
 
   <div class="row">
-    <% for(let recipe of recipes){ %>
-      <div class="col-sm-4 col-lg-3 mb-4">
-        <div class="card h-100">
-          <a href="/recipe/<%= recipe.id %>" >
-            <img src="<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title"><%= recipe.name %></h5>
-            
-          </div>
-          <div class="card-footer">
-            <a href="/recipe/<%= recipe.id %>" class="btn d-block btn-light text-start">
-              Details <i class="bi bi-arrow-right float-end"></i>
+    <% if (recipes.length > 0) { %>
+      <% for(let recipe of recipes){ %>
+        <div class="col-sm-4 col-lg-3 mb-4">
+          <div class="card h-100">
+            <a href="/recipes/<%= recipe.id %>" >
+              <img src="<%= recipe.image %>" class="card-img-top" alt="<%= recipe.name %>">
             </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= recipe.name %></h5>
+              
+            </div>
+            <div class="card-footer">
+              <a href="/recipes/<%= recipe.id %>" class="btn d-block btn-light text-start">
+                Details <i class="bi bi-arrow-right float-end"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      <% } %>
     <% } %>
-      
   </div>
 
 </main>
